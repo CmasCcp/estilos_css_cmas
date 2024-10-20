@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentación del archivo CSS personalizado">
+    <title>Documentación CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: #2C2C2C;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            border-left: 5px solid #ccc;
+            padding: 10px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            font-size: 14px;
+            color: #d6336c;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .back-to-top {
+            display: block;
+            margin: 20px 0;
+            text-align: right;
+        }
+
+        .back-to-top a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .back-to-top a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Documentación estilos CSS</h1>
+        <h3>Por el Centro de Investigación en Tecnologías para la Sociedad - UDD</h3>
+        <p>Esta documentación describe el propósito de las clases y estilos disponibles en el archivo CSS personalizado.</p>
+
+        <div class="section">
+            <h2>1. Introducción</h2>
+            <p>Este archivo CSS proporciona estilos personalizados para la aplicación, incluyendo variables CSS, colores de fondo, estilos de texto, tarjetas (cards), sombras, bordes y más. La siguiente documentación describe cómo utilizar estos estilos para mejorar la apariencia de la interfaz de usuario.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Variables CSS (Custom Properties)</h2>
+            <p>El archivo define varias variables CSS dentro del selector <code>:root</code>, lo que permite utilizar esquemas de colores personalizados a lo largo de la aplicación.</p>
+            <pre><code>:root {
+    --customprimary: #ffffff!important;
+    --customsecondary: #F4F5F7!important;
+    --customdark: #2C2C2C;
+    --light: #d7d7d9!important;
+    --success: #3EDC85!important;
+    --dos: #261501;
+    --warning: orange!important;
+}</code></pre>
+            <p>Ejemplos de uso:</p>
+            <ul>
+                <li><code>--customprimary</code>: Se utiliza para definir el color primario de fondo o texto.</li>
+                <li><code>--customsecondary</code>: Color secundario, utilizado principalmente como fondo de la aplicación.</li>
+                <li><code>--customdark</code>: Color oscuro utilizado para el texto o fondos oscuros.</li>
+                <li><code>--success</code>: Color verde utilizado para mostrar estados de éxito.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. Estilos Globales</h2>
+            <p>Estos estilos afectan a todos los elementos del sitio, estableciendo márgenes y rellenos predeterminados y definiendo el color de fondo de la página.</p>
+            <pre><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--customsecondary)!important;
+}</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>4. Componentes de Diseño de la Aplicación</h2>
+            <h3>4.1. Contenedores Principales</h3>
+            <p>Las clases <code>.app-container</code> y <code>.content</code> permiten organizar los elementos de la aplicación y ajustar la altura mínima de la pantalla.</p>
+            <pre><code>.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}</code></pre>
+
+            <h3>4.2. Footer</h3>
+            <p>La clase <code>.footer</code> aplica un estilo coherente al pie de página, incluyendo color de fondo, padding y alineación de texto.</p>
+            <pre><code>.footer {
+    background-color: var(--customprimary)!important;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>5. Colores de Fondo y Texto Personalizados</h2>
+            <p>Estas clases permiten personalizar el color de fondo y texto utilizando las variables definidas en <code>:root</code>.</p>
+            <pre><code>.bg-customprimary { background-color: var(--customprimary)!important; }
+.text-customdark { color: var(--customdark); }
+.bg-success { background-color: var(--success)!important; }</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>6. Tarjetas (Cards)</h2>
+            <p>Las tarjetas utilizan clases como <code>.card</code> y <code>.card-title</code> para definir un estilo consistente con sombra, bordes redondeados y efectos de hover.</p>
+            <pre><code>.card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>7. Sombras y Bordes</h2>
+            <p>El archivo define varias clases para aplicar sombras y bordes personalizadas a los elementos.</p>
+            <pre><code>.box-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>8. Alturas y Anchos Responsivos</h2>
+            <p>Las clases como <code>.vh-*</code> y <code>.min-vh-*</code> se utilizan para definir alturas y anchos relativos a la pantalla del dispositivo (viewport).</p>
+            <pre><code>.vh-100 { height: 100vh; }
+.min-vh-50 { min-height: 50vh; }</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>9. Clases de Texto y Formato</h2>
+            <p>Las clases de texto permiten personalizar el estilo de los encabezados y el formato de los textos. Ejemplo de clases: <code>.header-text</code>, <code>.handwriting</code>, y más.</p>
+            <pre><code>.header-text { font-weight: 600; }
+.handwriting { font-family: 'Parisienne', cursive; font-size: 3.5rem; }</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>10. Media Queries (Estilos Responsivos)</h2>
+            <p>Los estilos responsivos permiten adaptar el diseño a diferentes tamaños de pantalla. Ejemplo:</p>
+            <pre><code>@media (max-width: 576px) {
+    p, h5 { text-align: center; }
+}</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>11. Clases de Hover y Opacidad</h2>
+            <p>Las clases <code>.hover-dark</code> y <code>.opacity-*</code> permiten cambiar el comportamiento de los elementos en función de la interacción del usuario y la visibilidad.</p>
+            <pre><code>.hover-dark:hover { background-color: var(--customdark)!important; }
+.opacity-3 { opacity: 0.6!important; }</code></pre>
+        </div>
+
+        <div class="section back-to-top">
+            <a href="#top">Volver al inicio</a>
+        </div>
+    </div>
+
+</body>
+</html>
